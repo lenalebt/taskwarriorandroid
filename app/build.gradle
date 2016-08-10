@@ -18,13 +18,18 @@ android {
             debuggable true
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
-    //    compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile project(':Lima1Common')
+    testCompile 'junit:junit:4.8.2'
 }
