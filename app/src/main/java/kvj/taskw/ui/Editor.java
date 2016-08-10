@@ -2,9 +2,12 @@ package kvj.taskw.ui;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,6 +87,17 @@ public class Editor extends Fragment {
         return dateFromInput(text);
     }
 
+    private static boolean isBrokenSamsungDevice() {
+        return (Build.MANUFACTURER.equalsIgnoreCase("samsung")
+                && isBetweenAndroidVersions(
+                Build.VERSION_CODES.LOLLIPOP,
+                Build.VERSION_CODES.LOLLIPOP_MR1));
+    }
+
+    private static boolean isBetweenAndroidVersions(int min, int max) {
+        return Build.VERSION.SDK_INT >= min && Build.VERSION.SDK_INT <= max;
+    }
+
     private void setupDatePicker(View view, int text, int btn) {
         final EditText textInput = (EditText) view.findViewById(text);
         view.findViewById(btn).setOnClickListener(new View.OnClickListener() {
@@ -93,9 +107,16 @@ public class Editor extends Fragment {
                 if (null == dt) { // Invalid input
                     dt = new Date();
                 }
+
                 final Calendar c = Calendar.getInstance();
                 c.setTime(dt);
-                DatePickerDialog dialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+
+                Context context = getContext();
+                if (isBrokenSamsungDevice()) {
+                    context = new ContextThemeWrapper(getContext(), android.R.style.Theme_Holo_Light_Dialog);
+                }
+
+                DatePickerDialog dialog = new DatePickerDialog(context, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 //                        logger.d("Date set:", year, monthOfYear, dayOfMonth);
