@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply from: '../../Configs/gradle/android.gradle'
 
 android {
     compileSdkVersion 23
@@ -12,21 +11,11 @@ android {
         versionCode 3
         versionName "0.1.160410"
     }
-    androidAutoVersion(defaultConfig, "0.1.")
-    signingConfigs {
-        release {
-        }
-    }
-
-    androidSetupSignConfig(signingConfigs.release)
-
 
     buildTypes {
-        release {
-            signingConfig signingConfigs.release
-        }
         debug {
-            signingConfig signingConfigs.release
+            versionNameSuffix '-SNAPSHOT' + new Date().format('.YMMddHHmm')
+            debuggable true
         }
     }
 }
