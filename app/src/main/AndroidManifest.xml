@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kvj.taskw" >
+    package="de.lenabrueder.taskw" >
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
@@ -11,16 +11,15 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
-
     <application
-            android:name=".App"
+            android:name="de.lenabrueder.taskw.App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_tw_logo"
             android:label="@string/app_name"
             android:supportsRtl="true"
             android:theme="@style/AppTheme" >
         <activity
-            android:name=".ui.MainActivity"
+            android:name="de.lenabrueder.taskw.ui.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".ui.TextEditor"
+                android:name="de.lenabrueder.taskw.ui.TextEditor"
                 android:theme="@style/AppTheme"
                 android:exported="true"
                 android:windowSoftInputMode="adjustResize"
@@ -44,27 +43,27 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".account.AccountAuthenticator$AccountAddDialog"
+            android:name="de.lenabrueder.taskw.account.AccountAuthenticator$AccountAddDialog"
             android:theme="@style/AppThemeDialog"
             android:excludeFromRecents="true">
 
         </activity>
         <activity
-            android:name=".ui.AnnotationDialog"
+            android:name="de.lenabrueder.taskw.ui.AnnotationDialog"
             android:theme="@style/AppThemeDialog">
         </activity>
-        <activity android:name=".ui.EditorActivity"
+        <activity android:name="de.lenabrueder.taskw.ui.EditorActivity"
             android:theme="@style/AppThemeD">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.RunActivity"
+        <activity android:name="de.lenabrueder.taskw.ui.RunActivity"
                   android:theme="@style/AppThemeD">
         </activity>
         <service
-                android:name=".account.AccountAuthenticator$Service"
+                android:name="de.lenabrueder.taskw.account.AccountAuthenticator$Service"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -73,14 +72,14 @@
                        android:resource="@xml/authenticator" />
         </service>
         <receiver
-                android:name=".data.SyncIntentReceiver"
+                android:name="de.lenabrueder.taskw.data.SyncIntentReceiver"
                 android:enabled="true"
                 android:exported="true">
             <intent-filter>
                 <action android:name="taskw.SYNC"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".data.BootReceiver" >
+        <receiver android:name="de.lenabrueder.taskw.data.BootReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

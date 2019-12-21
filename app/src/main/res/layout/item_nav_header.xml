@@ -28,7 +28,7 @@
                 android:text=""
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/colorPrimaryText" />
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/list_nav_account_id"
@@ -40,7 +40,7 @@
                 android:text=""
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="@color/colorPrimaryText" />
+                android:textColor="#000000" />
         </LinearLayout>
 
         <ImageButton

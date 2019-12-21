@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "kvj.taskw"
+        applicationId "de.lenabrueder"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 3

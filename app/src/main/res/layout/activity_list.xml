@@ -14,8 +14,8 @@
         <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 app:navigationIcon="@drawable/ic_action_tb_menu"
-                app:titleTextColor="@color/colorPrimaryText"
-                app:subtitleTextColor="@color/colorPrimaryText"
+                app:titleTextColor="#000000"
+                app:subtitleTextColor="#000000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"/>
@@ -53,7 +53,7 @@
                     android:id="@+id/list_list_fragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    class="kvj.taskw.ui.MainList"/>
+                    class="de.lenabrueder.taskw.ui.MainList"/>
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/list_add_btn"
                     android:layout_width="wrap_content"

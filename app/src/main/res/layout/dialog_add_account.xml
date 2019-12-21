@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/colorAccent"
+            android:textColor="#000000"
             android:text="Data folder:"/>
     <Spinner
             android:id="@+id/add_account_folder"
